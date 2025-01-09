@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .hex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: rgb(228, 228, 228);
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            letter-spacing: 2px;
+            font-size: 25px;
+            height: 80px;
+        }
+        .outer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 20px;
+        }
+
+        .color-container {
+            width: 300px;
+        }
+
+        input[type="color"]{
+            width: 22.5%;
+            height: 40px;
+            margin: 2px;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: rgb(0, 145, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <h1>COLOR PICKER</h1>
+        <div class="hex-container">
+            <p id="hex"></p>
+        </div>
+        <div class="color-container">
+            <input type="color" value="#000000" class="color" id="black">
+            <input type="color" value="#ff0000" class="color" id="red">
+            <input type="color" value="#00ff00" class="color" id="green">
+            <input type="color" value="#0000ff" class="color" id="blue">
+            <input type="color" value="#ffff00" class="color" id="yellow">
+            <input type="color" value="#ff00ff" class="color" id="magenta">
+            <input type="color" value="#00ffff" class="color" id="cyan">
+            <input type="color" value="#800080" class="color" id="purple">
+            <input type="color" value="#ffa500" class="color" id="orange">
+            <input type="color" value="#808080" class="color" id="grey">
+            <input type="color" value="#ffffff" class="color" id="white">
+            <input type="color" value="#008000" class="color" id="darkGreen">
+            <input type="color" value="#800000" class="color" id="maroon">
+            <input type="color" value="#000080" class="color" id="navy">
+            <input type="color" value="#ff4500" class="color" id="orangeRed">
+            <input type="color" value="#daa520" class="color" id="goldenRod">
+            <input type="color" value="#a52a2a" class="color" id="brown">
+            <input type="color" value="#d2691e" class="color" id="chocolate">
+            <input type="color" value="#fa8072" class="color" id="salmon">
+            <input type="color" value="#ffc0cb" class="color" id="pink">   
+        </div>
+    </div>
+
+    <script>
+        const hexCode = document.getElementById('hex')
+        const colorInput = document.querySelectorAll('.color')
+
+        colorInput.forEach(input => {
+            input.addEventListener('input', (event) => {
+                hexCode.textContent = event.target.value;
+                hexCode.style.color = event.target.value;
+            })
+            
+        })
+    </script>
+</body>
+</html>
