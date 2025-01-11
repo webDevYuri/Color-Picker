@@ -83,16 +83,24 @@
     </div>
 
     <script>
-        const hexCode = document.getElementById('hex')
-        const colorInput = document.querySelectorAll('.color')
+        // Select the element with the ID 'hex' that will display the current hex color value.
+        const hexCode = document.getElementById('hex');
 
+        // Select all elements with the class 'color' (typically color input fields).
+        const colorInput = document.querySelectorAll('.color');
+
+        // Loop through each color input field.
         colorInput.forEach(input => {
+            // Add an event listener for the 'input' event, which triggers whenever the color input changes.
             input.addEventListener('input', (event) => {
+                // Update the text content of the 'hexCode' element with the selected color's hex value.
                 hexCode.textContent = event.target.value;
+
+                // Change the text color of the 'hexCode' element to match the selected color.
                 hexCode.style.color = event.target.value;
-            })
-            
-        })
+            });
+        });
+
     </script>
 </body>
 </html>
